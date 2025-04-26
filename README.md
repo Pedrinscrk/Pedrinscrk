@@ -16,7 +16,7 @@
 </div>
 
 
-![snake animation](https://github.com/Pedrinscrk/Pedrinscrk/blob/output/github-contribution-grid-snake2.svg)
+![GitHub Streak](https://github-streak-stats.herokuapp.com/?user=Pedrinscrk&theme=dark&hide_border=true&date_format=j%20M%5B%20Y%5D)
 
 ### Main skills:
 ![Node.JS](https://img.shields.io/badge/-Node.JS-0D1117?style=for-the-badge&logo=node.js&labelColor=0D1117&textColor=0D1117)&nbsp;
