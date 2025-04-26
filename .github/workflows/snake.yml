@@ -1,5 +1,5 @@
 # Nome que aparece na lista de workflows na aba Actions
-# Mudou para o nome sugerido pela documentação da Action
+# Mudou para o nome sugerido pela documentação da Action Sutil/snk
 name: Generate snake game
 
 # Eventos que disparam a Action
@@ -15,7 +15,7 @@ on:
 jobs:
   # Nome do job
   build:
-    # Nome do job que aparece nos logs
+    # Nome do job que aparece nos logs (sugerido pela documentação)
     name: Jobs to update datas
     # Ambiente de execução
     runs-on: ubuntu-latest
@@ -30,30 +30,40 @@ jobs:
         uses: actions/checkout@v4
 
       # Passo 2: Roda a Action que gera a animação da cobrinha
-      # **USANDO A ACTION CORRETA ESCOLHIDA NO MARKETPLACE**
-      - uses: Sutil/snk@master # <<< ESTA É A ACTION CORRETA
-        id: snake-gif # ID para referência futura (se necessário)
+      # **USANDO A ACTION Sutil/snk COM PARÂMETROS DE TAMANHO**
+      - name: Generate snake file # Este passo gera o arquivo SVG
+        uses: Sutil/snk@master # <<< A ACTION CORRETA
+        id: snake-gif # ID para referência futura (opcional)
         with:
           # **Seu nome de usuário do GitHub** - Pegando automaticamente do repositório owner
           github_user_name: ${{ github.repository_owner }} # Isso usará 'Pedrinscrk'
-          # Caminho onde o arquivo SVG/GIF será gerado (dentro do ambiente da Action)
+          # Caminho onde o SVG/GIF será gerado DENTRO DO AMBIENTE DA ACTION
           # É o caminho que a Action Sutil/snk usa
           svg_out_path: dist/github-contribution-grid-snake2.svg # <<< NOME E CAMINHO DO ARQUIVO GERADO
 
-          # Parâmetro opcional: cor da cobrinha (mude 'blue' se quiser outra cor)
+          # Parâmetro opcional: cor da cobrinha
           snake_color: 'blue' # Ex: 'green', 'red', etc.
 
-      # Passo 3: Usa outra Action para commitar o arquivo gerado
-      # Esta Action commita o conteúdo de um diretório para um branch específico
-      - name: Commit generated file
-        # Usando a Action sugerida pela documentação da Sutil/snk
+          # >>> PARÂMETROS ADICIONADOS PARA CORRIGIR O CONTEÚDO SVG <<<
+          width: 480 # <<< LARGURA DA IMAGEM (AJUSTE SE QUISER)
+          height: 240 # <<< ALTURA DA IMAGEM (AJUSTE SE QUISER)
+          # ^^^ Estes parâmetros provavelmente faltavam para a Action gerar o SVG corretamente
+
+          # Outros parâmetros opcionais da Sutil/snk podem ser adicionados aqui se necessário
+          # Veja a documentação completa da Sutil/snk no GitHub (Sutil/snk) se precisar de mais opções
+
+        env:
+          # Token de autenticação do GitHub (necessário para a Action Sutil/snk buscar seus dados)
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Passo 3: Usa outra Action para commitar o arquivo gerado para o branch 'output'
+      - name: Commit generated file # Este passo commita o arquivo gerado
+        # Usando a Action sugerida pela documentação da Sutil/snk para commit
         uses: crazy-max/ghaction-github-pages@v2.1.3
         with:
           # **Branch de destino:** O arquivo será commitado NESTE branch!
-          # A documentação sugere 'output'
           target_branch: output # <<< O ARQUIVO IRÁ PARA UM BRANCH CHAMADO 'output'
-          # **Diretório para commitar:** O conteúdo DESTA pasta será commitado
-          # É a pasta onde a Action Sutil/snk gerou a imagem
+          # **Diretório para commitar:** O conteúdo DESTA pasta será commitado (onde a Sutil/snk gerou o arquivo)
           build_dir: dist # <<< COMMITARÁ O CONTEÚDO DA PASTA 'dist'
         env:
           # Token de autenticação do GitHub (necessário para commitar em outro branch)
