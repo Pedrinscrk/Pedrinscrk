@@ -1,0 +1,54 @@
+# Nome da sua ação
+name: Generate Snake Animation
+
+# Quando a ação deve rodar
+on:
+  # Roda automaticamente todo dia à meia-noite UTC
+  schedule:
+    - cron: "0 0 * * *"
+  # Permite rodar a ação manualmente na aba "Actions"
+  workflow_dispatch:
+
+# Os jobs (tarefas) que a ação vai executar
+jobs:
+  generate:
+    # O ambiente onde a tarefa vai rodar
+    runs-on: ubuntu-latest
+    # Permissões necessárias para commitar a imagem de volta
+    permissions:
+      contents: write
+
+    # Os passos da tarefa
+    steps:
+      # Checkout: pega o código do seu repositório
+      - uses: actions/checkout@v4
+
+      # Passo para gerar o arquivo da cobrinha
+      - name: Generate snake file
+        # Usa a action da cobrinha
+        uses: PlatypusBuilder/github-contribution-grid-snake@v2.2.1
+        with:
+          # Seu nome de usuário do GitHub - MUITO IMPORTANTE!
+          github_user_name: Pedrinscrk
+          # Quais formatos de saída você quer (SVG é comum para README)
+          outputs: |
+            github-contribution-grid-snake.svg
+            github-contribution-grid-snake.gif
+            github-contribution-grid-snake.svg.dark
+            github-contribution-grid-snake.gif.dark
+        env:
+          # O token do GitHub, necessário para a action buscar seus dados
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Passo para commitar o arquivo gerado de volta para o repositório
+      - name: Commit snake file
+        run: |
+          # Configurações do Git para o bot do GitHub Actions
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          # Adiciona os arquivos gerados para o commit
+          git add github-contribution-grid-snake.svg github-contribution-grid-snake.gif github-contribution-grid-snake.svg.dark github-contribution-grid-snake.gif.dark
+          # Cria o commit (ignora se não houver alterações)
+          git commit -m "Atualiza snake animation" || echo "Nenhuma alteração a commitar"
+          # Envia as alterações para o repositório (para o branch atual, geralmente main ou master)
+          git push
