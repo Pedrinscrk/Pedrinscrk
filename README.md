@@ -16,10 +16,6 @@
 </div>
 
 <div align="center">
-  <img src="https://github-streak-stats.herokuapp.com/?user=Pedrinscrk&theme=dark&hide_border=true&date_format=j%20M%5B%20Y%5D" alt="GitHub Streak"/>
-</div>
-
-<div align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=Pedrinscrk&theme=dracula&row=2&no-bg=true&column=3&margin-w=15&margin-h=15" alt="GitHub Profile Trophies"/>
 </div>
 
