@@ -1,28 +1,60 @@
-
+# Nome que aparece na lista de workflows na aba Actions
+# Mudou para o nome sugerido pela documentação da Action
 name: Generate snake game
 
+# Eventos que disparam a Action
 on:
-  schedule: # execute every 12 hours
+  # Dispara a Action automaticamente todo dia à meia-noite UTC
+  # Você pode ajustar o cron, se quiser (esse da documentação roda a cada 12h)
+  schedule:
     - cron: "* */12 * * *"
+  # Permite rodar a Action manualmente pela aba "Actions"
   workflow_dispatch:
 
+# Definição dos jobs (tarefas)
 jobs:
+  # Nome do job
   build:
+    # Nome do job que aparece nos logs
     name: Jobs to update datas
+    # Ambiente de execução
     runs-on: ubuntu-latest
-    steps:
-      # Snake Animation
-      - uses: Sutil/snk@master
-        id: snake-gif
-        with:
-          github_user_name: ${{Pedrinscrk}}
-          svg_out_path: dist/github-contribution-grid-snake2.svg
-          snake_color: 'blue'
+    # Permissões para escrever no repositório (necessário para o commit)
+    permissions:
+      contents: write
 
-      - uses: crazy-max/ghaction-github-pages@v2.1.3
+    # Passos do job
+    steps:
+      # Passo 1: Faz o checkout do código do seu repositório no ambiente da Action
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Passo 2: Roda a Action que gera a animação da cobrinha
+      # **USANDO A ACTION CORRETA ESCOLHIDA NO MARKETPLACE**
+      - uses: Sutil/snk@master # <<< ESTA É A ACTION CORRETA
+        id: snake-gif # ID para referência futura (se necessário)
         with:
-          target_branch: output
-          build_dir: dist
+          # **Seu nome de usuário do GitHub** - Pegando automaticamente do repositório owner
+          github_user_name: ${{ github.repository_owner }} # Isso usará 'Pedrinscrk'
+          # Caminho onde o arquivo SVG/GIF será gerado (dentro do ambiente da Action)
+          # É o caminho que a Action Sutil/snk usa
+          svg_out_path: dist/github-contribution-grid-snake2.svg # <<< NOME E CAMINHO DO ARQUIVO GERADO
+
+          # Parâmetro opcional: cor da cobrinha (mude 'blue' se quiser outra cor)
+          snake_color: 'blue' # Ex: 'green', 'red', etc.
+
+      # Passo 3: Usa outra Action para commitar o arquivo gerado
+      # Esta Action commita o conteúdo de um diretório para um branch específico
+      - name: Commit generated file
+        # Usando a Action sugerida pela documentação da Sutil/snk
+        uses: crazy-max/ghaction-github-pages@v2.1.3
+        with:
+          # **Branch de destino:** O arquivo será commitado NESTE branch!
+          # A documentação sugere 'output'
+          target_branch: output # <<< O ARQUIVO IRÁ PARA UM BRANCH CHAMADO 'output'
+          # **Diretório para commitar:** O conteúdo DESTA pasta será commitado
+          # É a pasta onde a Action Sutil/snk gerou a imagem
+          build_dir: dist # <<< COMMITARÁ O CONTEÚDO DA PASTA 'dist'
         env:
+          # Token de autenticação do GitHub (necessário para commitar em outro branch)
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  
