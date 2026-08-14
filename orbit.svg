@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-label="Animated skill constellation">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#070A10"/>
+      <stop offset="1" stop-color="#0C1119"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6EA8FF"/>
+      <stop offset=".5" stop-color="#9B7DFF"/>
+      <stop offset="1" stop-color="#43DEFF"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="5"/></filter>
+    <style>
+      .ui{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif}
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+      .ring{fill:none;stroke:#273140;stroke-width:1.2;stroke-dasharray:4 8}
+      @keyframes spin{to{transform:rotate(360deg)}}
+      @keyframes pulse{0%,100%{opacity:.28}50%{opacity:1}}
+      .pulse{animation:pulse 2.8s ease-in-out infinite}
+    </style>
+  </defs>
+  <rect width="1200" height="470" rx="30" fill="url(#bg)"/>
+  <rect x="1" y="1" width="1198" height="468" rx="29" fill="none" stroke="#252D39"/>
+
+  <text x="54" y="57" class="ui" font-size="13" fill="#7A8799" letter-spacing="1.6">SKILL CONSTELLATION</text>
+  <text x="54" y="89" class="ui" font-size="23" font-weight="650" fill="#F0F3F8">Three centers. One hybrid profile.</text>
+
+  <g transform="translate(235 275)">
+    <circle r="122" class="ring"/>
+    <circle r="86" class="ring"/>
+    <circle r="45" fill="#121925" stroke="#35465D"/>
+    <circle r="32" fill="url(#g)" opacity=".10" filter="url(#glow)"/>
+    <text y="-3" text-anchor="middle" class="ui" font-size="15" font-weight="650" fill="#F4F7FB">DATA</text>
+    <text y="18" text-anchor="middle" class="mono" font-size="9" fill="#78869A">ENGINEERING</text>
+    <g style="transform-box:fill-box;transform-origin:center;animation:spin 15s linear infinite">
+      <circle cx="0" cy="-122" r="6" fill="#6EA8FF" class="pulse"/>
+      <circle cx="105" cy="62" r="4" fill="#9B7DFF"/>
+      <circle cx="-96" cy="76" r="4" fill="#43DEFF"/>
+    </g>
+  </g>
+
+  <g transform="translate(600 275)">
+    <circle r="122" class="ring"/>
+    <circle r="86" class="ring"/>
+    <circle r="45" fill="#121925" stroke="#4B3F68"/>
+    <circle r="32" fill="#9B7DFF" opacity=".10" filter="url(#glow)"/>
+    <text y="-3" text-anchor="middle" class="ui" font-size="15" font-weight="650" fill="#F4F7FB">AUTOMATION</text>
+    <text y="18" text-anchor="middle" class="mono" font-size="9" fill="#78869A">INTEGRATION</text>
+    <g style="transform-box:fill-box;transform-origin:center;animation:spin 18s linear infinite reverse">
+      <circle cx="0" cy="-122" r="6" fill="#9B7DFF" class="pulse"/>
+      <circle cx="108" cy="58" r="4" fill="#43DEFF"/>
+      <circle cx="-100" cy="70" r="4" fill="#6EA8FF"/>
+    </g>
+  </g>
+
+  <g transform="translate(965 275)">
+    <circle r="122" class="ring"/>
+    <circle r="86" class="ring"/>
+    <circle r="45" fill="#121925" stroke="#30516A"/>
+    <circle r="32" fill="#43DEFF" opacity=".08" filter="url(#glow)"/>
+    <text y="-3" text-anchor="middle" class="ui" font-size="15" font-weight="650" fill="#F4F7FB">PRODUCT</text>
+    <text y="18" text-anchor="middle" class="mono" font-size="9" fill="#78869A">FRONTEND / UX</text>
+    <g style="transform-box:fill-box;transform-origin:center;animation:spin 16s linear infinite">
+      <circle cx="0" cy="-122" r="6" fill="#43DEFF" class="pulse"/>
+      <circle cx="106" cy="61" r="4" fill="#6EA8FF"/>
+      <circle cx="-98" cy="73" r="4" fill="#9B7DFF"/>
+    </g>
+  </g>
+
+  <g class="ui" font-size="11">
+    <g transform="translate(123 143)"><rect width="66" height="28" rx="14" fill="#101722" stroke="#263243"/><text x="33" y="18" text-anchor="middle" fill="#BFC9D7">SQL</text></g>
+    <g transform="translate(206 124)"><rect width="58" height="28" rx="14" fill="#101722" stroke="#263243"/><text x="29" y="18" text-anchor="middle" fill="#BFC9D7">ETL</text></g>
+    <g transform="translate(276 142)"><rect width="86" height="28" rx="14" fill="#101722" stroke="#263243"/><text x="43" y="18" text-anchor="middle" fill="#BFC9D7">Pipelines</text></g>
+
+    <g transform="translate(463 142)"><rect width="74" height="28" rx="14" fill="#101722" stroke="#332B49"/><text x="37" y="18" text-anchor="middle" fill="#BFC9D7">Node.js</text></g>
+    <g transform="translate(548 124)"><rect width="105" height="28" rx="14" fill="#101722" stroke="#332B49"/><text x="52.5" y="18" text-anchor="middle" fill="#BFC9D7">Schedulers</text></g>
+    <g transform="translate(665 142)"><rect width="72" height="28" rx="14" fill="#101722" stroke="#332B49"/><text x="36" y="18" text-anchor="middle" fill="#BFC9D7">APIs</text></g>
+
+    <g transform="translate(828 142)"><rect width="102" height="28" rx="14" fill="#101722" stroke="#244052"/><text x="51" y="18" text-anchor="middle" fill="#BFC9D7">JavaScript</text></g>
+    <g transform="translate(942 124)"><rect width="76" height="28" rx="14" fill="#101722" stroke="#244052"/><text x="38" y="18" text-anchor="middle" fill="#BFC9D7">Express</text></g>
+    <g transform="translate(1030 142)"><rect width="64" height="28" rx="14" fill="#101722" stroke="#244052"/><text x="32" y="18" text-anchor="middle" fill="#BFC9D7">UX</text></g>
+  </g>
+</svg>

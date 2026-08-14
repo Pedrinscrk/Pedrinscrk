@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="460" viewBox="0 0 1200 460" role="img" aria-label="Pedrinho profile hero">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#05070B"/>
+      <stop offset="0.48" stop-color="#0B0E15"/>
+      <stop offset="1" stop-color="#080A10"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7AA2FF"/>
+      <stop offset="0.48" stop-color="#9A7BFF"/>
+      <stop offset="1" stop-color="#45D7FF"/>
+    </linearGradient>
+    <radialGradient id="orb">
+      <stop offset="0" stop-color="#8E7CFF" stop-opacity=".34"/>
+      <stop offset="1" stop-color="#8E7CFF" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="38"/></filter>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .ui{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif}
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+      .grid{stroke:#202633;stroke-width:1;opacity:.42}
+      .flow{fill:none;stroke:url(#accent);stroke-width:1.5;stroke-linecap:round;opacity:.58;stroke-dasharray:9 12;animation:dash 8s linear infinite}
+      @keyframes dash{to{stroke-dashoffset:-210}}
+      @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+      .pulse{animation:pulse 3s ease-in-out infinite}
+      @keyframes rise{0%,100%{transform:translateY(0);opacity:.48}50%{transform:translateY(-5px);opacity:.85}}
+      .rise{animation:rise 5s ease-in-out infinite}
+    </style>
+  </defs>
+
+  <rect width="1200" height="460" rx="30" fill="url(#bg)"/>
+  <rect x="1" y="1" width="1198" height="458" rx="29" fill="none" stroke="#222834"/>
+
+  <g opacity=".34">
+    <path class="grid" d="M0 92H1200M0 184H1200M0 276H1200M0 368H1200"/>
+    <path class="grid" d="M120 0V460M240 0V460M360 0V460M480 0V460M600 0V460M720 0V460M840 0V460M960 0V460M1080 0V460"/>
+  </g>
+
+  <circle cx="1030" cy="95" r="190" fill="url(#orb)" filter="url(#blur)">
+    <animate attributeName="r" values="175;205;175" dur="9s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="915" cy="355" r="120" fill="#3BC6FF" opacity=".08" filter="url(#blur)">
+    <animate attributeName="cx" values="890;940;890" dur="11s" repeatCount="indefinite"/>
+  </circle>
+
+  <g transform="translate(64 54)">
+    <rect width="154" height="34" rx="17" fill="#111620" stroke="#2B3340"/>
+    <circle cx="18" cy="17" r="4" fill="#62E6A7" class="pulse"/>
+    <text x="31" y="22" class="ui" font-size="12" fill="#C9D1DD" letter-spacing=".8">PROFILE / 2026</text>
+  </g>
+
+  <text x="64" y="182" class="ui" font-size="74" font-weight="760" fill="#F6F8FC" letter-spacing="-3">PEDRINHO</text>
+  <rect x="64" y="202" width="468" height="3" rx="1.5" fill="url(#accent)" filter="url(#glow)"/>
+
+  <text x="64" y="246" class="ui" font-size="22" fill="#AAB4C3">Data Development · Automation · Product UX</text>
+  <text x="64" y="282" class="ui" font-size="15" fill="#737F90">Analista de Desenvolvimento de Dados</text>
+
+  <g transform="translate(64 321)">
+    <rect width="228" height="42" rx="14" fill="#0E131C" stroke="#252E3B"/>
+    <text x="18" y="26" class="ui" font-size="13" fill="#C8D1DE">Rondonópolis · MT · Brazil</text>
+  </g>
+  <g transform="translate(307 321)">
+    <rect width="225" height="42" rx="14" fill="#0E131C" stroke="#252E3B"/>
+    <text x="18" y="26" class="ui" font-size="13" fill="#AAB4C3">current · Grupo Flamboyan</text>
+  </g>
+
+  <g transform="translate(684 112)" class="rise">
+    <rect width="430" height="238" rx="24" fill="#0B1018" fill-opacity=".76" stroke="#252C39"/>
+    <text x="28" y="44" class="mono" font-size="11" fill="#5E6A7B">SYSTEM DESIGN VECTOR</text>
+
+    <g transform="translate(28 74)">
+      <circle cx="14" cy="14" r="7" fill="#7AA2FF"/>
+      <text x="36" y="19" class="ui" font-size="15" fill="#EEF2F7">connect data</text>
+      <path d="M180 14H362" class="flow"/>
+      <circle cx="362" cy="14" r="4" fill="#45D7FF" class="pulse"/>
+    </g>
+    <g transform="translate(28 124)">
+      <circle cx="14" cy="14" r="7" fill="#9A7BFF"/>
+      <text x="36" y="19" class="ui" font-size="15" fill="#EEF2F7">automate flows</text>
+      <path d="M180 14H362" class="flow" style="animation-delay:-2s"/>
+      <circle cx="362" cy="14" r="4" fill="#7AA2FF" class="pulse"/>
+    </g>
+    <g transform="translate(28 174)">
+      <circle cx="14" cy="14" r="7" fill="#45D7FF"/>
+      <text x="36" y="19" class="ui" font-size="15" fill="#EEF2F7">ship usable products</text>
+      <path d="M180 14H362" class="flow" style="animation-delay:-4s"/>
+      <circle cx="362" cy="14" r="4" fill="#9A7BFF" class="pulse"/>
+    </g>
+  </g>
+
+  <text x="64" y="416" class="mono" font-size="11" fill="#566171">NO HYPE · REAL SYSTEMS · CLEAN EXPERIENCE</text>
+</svg>
