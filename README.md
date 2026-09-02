@@ -1,4 +1,4 @@
-<div align="center">
+﻿<div align="center">
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/portrait-dark.svg">
@@ -112,9 +112,6 @@ $ stack --core
 
 <img src="assets/metrics.languages.svg" height="175" alt="most used languages">
 
-<br><br>
-
-<img src="assets/metrics.achievements.svg" width="90%" alt="GitHub achievements">
 
 </div>
 
@@ -137,6 +134,6 @@ $ stack --core
 
 <br>
 
-<sub>`01000010 01010101 01001001 01001100 01000100 · 01001101 01000101 01000001 01010011 01010101 01010010 01000101 · 01010011 01001000 01001001 01010000`</sub>
+<sub>`01000010 01010101 01001001 01001100 01000100 Â· 01001101 01000101 01000001 01010011 01010101 01010010 01000101 Â· 01010011 01001000 01001001 01010000`</sub>
 
 </div>
