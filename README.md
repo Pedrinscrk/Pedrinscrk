@@ -8,10 +8,6 @@
 
 <br>
 
-<img src="assets/hero-terminal.svg" width="100%" alt="Pedrinscrk animated emerald terminal banner">
-
-<br>
-
 <a href="https://github.com/Pedrinscrk">
   <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=25&duration=2200&pause=650&color=25C686&center=true&vCenter=true&width=680&lines=Pedro;Data+%26+Backend;Node.js+%2B+SQL+Server+%2B+APIs;Automation+%2B+Internal+Systems;build+%E2%86%92+measure+%E2%86%92+automate+%E2%86%92+ship" alt="animated typing banner">
 </a>
@@ -24,23 +20,8 @@
 
 <img src="assets/stream-divider.svg" width="100%" alt="animated data stream divider">
 
-## `~/` whoami
-
-```console
-$ cat about.txt
-```
-
-Developer focused on **backend, data and automation**.
-I build APIs, web systems and data-driven workflows with an emphasis on reliability, clarity and measurable results.
-
-```console
-$ stack --core
-> JavaScript  Node.js  Express  SQL Server  Redis  Git  REST APIs  Web
-```
-
 <div align="center">
 
-<img src="assets/activity-pipeline.svg" width="100%" alt="animated request API data automation pipeline">
 
 ## `~/` toolbox
 
@@ -112,28 +93,5 @@ $ stack --core
 
 <img src="assets/metrics.languages.svg" height="175" alt="most used languages">
 
-
-</div>
-
-<img src="assets/stream-divider.svg" width="100%" alt="animated data stream divider">
-
-<div align="center">
-
-## `~/` selected work
-
-<table>
-<tr>
-<td width="50%"><a href="https://github.com/Pedrinscrk/WebMarkersBR"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-WebMarkersBR-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/card-WebMarkersBR-light.svg"><img src="assets/card-WebMarkersBR-dark.svg" width="420" alt="WebMarkersBR"></picture></a></td>
-<td width="50%"><a href="https://github.com/Pedrinscrk/Aquapulse-Hardware---Raspberry"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-Aquapulse-Hardware---Raspberry-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/card-Aquapulse-Hardware---Raspberry-light.svg"><img src="assets/card-Aquapulse-Hardware---Raspberry-dark.svg" width="420" alt="AquaPulse Hardware"></picture></a></td>
-</tr>
-<tr>
-<td width="50%"><a href="https://github.com/Pedrinscrk/AIPE"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-AIPE-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/card-AIPE-light.svg"><img src="assets/card-AIPE-dark.svg" width="420" alt="AIPE"></picture></a></td>
-<td width="50%"><a href="https://github.com/Pedrinscrk/APRD-SiteMassa"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/card-APRD-SiteMassa-dark.svg"><source media="(prefers-color-scheme: light)" srcset="assets/card-APRD-SiteMassa-light.svg"><img src="assets/card-APRD-SiteMassa-dark.svg" width="420" alt="APRD Site Massa"></picture></a></td>
-</tr>
-</table>
-
-<br>
-
-<sub>`01000010 01010101 01001001 01001100 01000100 Â· 01001101 01000101 01000001 01010011 01010101 01010010 01000101 Â· 01010011 01001000 01001001 01010000`</sub>
 
 </div>
