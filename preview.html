@@ -1,0 +1,56 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>Pedrinscrk profile assets preview</title>
+<style>
+  :root { color-scheme: dark }
+  * { box-sizing:border-box }
+  body { background:#07110d; color:#d7f3e5; font:15px/1.5 ui-sans-serif,Segoe UI,system-ui,sans-serif; margin:0; padding:34px; }
+  main { width:min(1100px,100%); margin:auto }
+  h1 { font-size:21px; color:#25c686; letter-spacing:.02em; margin:0 0 8px }
+  h2 { font-size:12px; text-transform:uppercase; letter-spacing:.14em; color:#789889; border-bottom:1px solid #174b38; padding-bottom:8px; margin:42px 0 18px }
+  p { color:#9ab6aa }
+  .row { display:flex; gap:22px; flex-wrap:wrap; align-items:flex-start }
+  .card { background:#0a1711; border:1px solid #174b38; border-radius:12px; padding:16px; overflow:hidden }
+  .card.light { background:#fff }
+  .wide { width:100% }
+  .tag { font:11px ui-monospace,Consolas,monospace; color:#789889; display:block; margin-bottom:10px }
+  img { display:block; max-width:100%; height:auto }
+  button { background:#10251b; color:#cce9dc; border:1px solid #245a43; border-radius:6px; padding:5px 12px; font:inherit; font-size:12px; cursor:pointer; margin-left:14px; vertical-align:middle; }
+  button:hover { background:#153727; border-color:#25c686; color:#39e6a0 }
+</style>
+<main>
+<h1>Pedrinscrk — emerald profile preview</h1>
+<p>Local preview of the assets that will appear in the GitHub profile README. Animated SVGs replay when reloaded.</p>
+
+<h2>portrait <button id="replay">replay load-in</button></h2>
+<div class="row">
+  <div class="card"><span class="tag">portrait-dark.svg</span><img class="portrait" src="assets/portrait-dark.svg" width="330"></div>
+  <div class="card light"><span class="tag" style="color:#58766a">portrait-light.svg</span><img class="portrait" src="assets/portrait-light.svg" width="330"></div>
+</div>
+<script>
+document.getElementById('replay').onclick=()=>document.querySelectorAll('img.portrait').forEach(img=>{const base=img.src.split('?')[0];img.src=base+'?'+Date.now()});
+</script>
+
+<h2>terminal hero</h2>
+<div class="card wide"><img src="assets/hero-terminal.svg"></div>
+
+<h2>engineering pipeline</h2>
+<div class="card wide"><img src="assets/activity-pipeline.svg"></div>
+
+<h2>language radar</h2>
+<div class="row">
+  <div class="card"><img src="assets/radar-langs-dark.svg" width="470"></div>
+  <div class="card light"><img src="assets/radar-langs-light.svg" width="470"></div>
+</div>
+
+<h2>contribution engine</h2>
+<div class="card wide"><img src="assets/metrics.isocalendar.svg"></div>
+<div class="card wide" style="margin-top:16px"><img src="assets/snake-dark.svg"></div>
+
+<h2>stats + project cards</h2>
+<div class="row">
+  <div class="card"><img src="assets/card-stats-dark.svg" width="480"></div>
+  <div class="card"><img src="assets/card-WebMarkersBR-dark.svg" width="420"></div>
+  <div class="card"><img src="assets/card-Aquapulse-Hardware---Raspberry-dark.svg" width="420"></div>
+</div>
+</main>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="118" viewBox="0 0 1000 118" role="img" aria-label="animated engineering pipeline">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#050a08"/><stop offset=".5" stop-color="#091912"/><stop offset="1" stop-color="#050a08"/></linearGradient>
+  <filter id="glow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<style>
+@keyframes flow{0%{transform:translateX(0)}100%{transform:translateX(760px)}}
+@keyframes pulse{0%,100%{opacity:.38}50%{opacity:1}}
+@keyframes ping{0%{r:5;opacity:.8}100%{r:18;opacity:0}}
+.packet{animation:flow 5.2s linear infinite}.pulse{animation:pulse 2.4s ease-in-out infinite}.ring{animation:ping 2.4s ease-out infinite}
+</style>
+<rect x="1" y="1" width="998" height="116" rx="14" fill="url(#bg)" stroke="#25c686" stroke-opacity=".2"/>
+<path d="M120 58H880" stroke="#25c686" stroke-opacity=".28" stroke-width="2"/>
+<g font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" text-anchor="middle">
+  <g transform="translate(120 58)"><circle r="8" fill="#25c686"/><circle class="ring" r="5" fill="none" stroke="#39e6a0"/><text y="32" fill="#bfead6" font-size="13">REQUEST</text></g>
+  <g transform="translate(373 58)"><circle class="pulse" r="8" fill="#25c686"/><text y="32" fill="#bfead6" font-size="13">API</text></g>
+  <g transform="translate(627 58)"><circle class="pulse" r="8" fill="#25c686"/><text y="32" fill="#bfead6" font-size="13">DATA</text></g>
+  <g transform="translate(880 58)"><circle r="8" fill="#39e6a0" filter="url(#glow)"/><text y="32" fill="#d7f3e5" font-size="13">AUTOMATE</text></g>
+</g>
+<g class="packet" transform="translate(120 58)"><circle r="5" fill="#39e6a0" filter="url(#glow)"/><circle cx="-16" r="2.4" fill="#25c686" opacity=".55"/><circle cx="-28" r="1.6" fill="#8ff0c8" opacity=".3"/></g>
+</svg>

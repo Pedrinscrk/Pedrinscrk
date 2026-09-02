@@ -1,96 +1,88 @@
-# Setup — Pedrinscrk Profile Extreme
+# Pedrinscrk profile — setup
 
-## 1. Upload the files
+This folder is ready for the GitHub profile repository:
 
-Use the GitHub profile repository:
+`https://github.com/Pedrinscrk/Pedrinscrk`
 
-`Pedrinscrk/Pedrinscrk`
+The visual identity is built around the emerald/teal lighting from the supplied portrait:
 
-Copy everything from this package into the repository root, preserving folders.
+- primary: `#25C686`
+- highlight/glow: `#39E6A0`
+- deep accent: `#0E7A52`
+- dark background: `#07110D`
 
-```text
-Pedrinscrk/
-├─ README.md
-├─ SETUP.md
-├─ assets/
-│  ├─ hero.svg
-│  ├─ architecture.svg
-│  ├─ orbit.svg
-│  ├─ pulse.svg
-│  └─ mark.svg
-├─ scripts/
-│  └─ update_pulse.py
-└─ .github/
-   └─ workflows/
-      ├─ pulse.yml
-      └─ snake.yml
+## 1. Upload the package
+
+Copy the contents of this folder into the root of `Pedrinscrk/Pedrinscrk` and push to `main`.
+
+The generated dot-matrix portrait is already included. The original high-resolution photo is intentionally **not** stored in this package so it is not accidentally published in the GitHub repository.
+
+## 2. Enable Actions write access
+
+In the profile repository:
+
+**Settings → Actions → General → Workflow permissions → Read and write permissions → Save**
+
+The workflows need write access because they refresh SVG assets inside the repository.
+
+## 3. Add `METRICS_TOKEN`
+
+The 3D calendar and profile metrics need a GitHub personal access token.
+
+Create a classic token with `read:user` and add it as a repository Actions secret named:
+
+`METRICS_TOKEN`
+
+If private repositories should contribute to the metrics, the token also needs the appropriate `repo` access. Do not commit the token into any file.
+
+## 4. Run the workflows once
+
+Open **Actions** and manually run:
+
+- **Metrics** — 3D contribution calendar, habits, language metrics and achievements.
+- **Snake** — emerald contribution snake.
+- **Live profile assets** — language radar, stats card and selected-project cards.
+
+The package contains animated placeholders, so the README does not start with broken images. The workflows overwrite those placeholders with live data after their first successful run.
+
+Scheduled refreshes:
+
+- Metrics: every 6 hours
+- Snake: every 12 hours
+- Live profile assets: daily
+
+## Portrait regeneration
+
+The current portrait was generated from the supplied photo with the emerald monochrome palette and both load-in/repeating animations.
+
+To regenerate it from another local photo:
+
+```powershell
+python scripts\dotify.py .\my-photo.png -o assets\portrait --cols 106 --equalize --detail 0.55 --circle --animate --duration 3.8 --reveal --reveal-time 2.2 --reveal-fade 0.35
 ```
 
-If the old `.github/workflows/blank.yml` is unused, delete it.
-Replace the old empty `snake.yml` with this package's version.
+Or through the helper:
 
-## 2. Enable GitHub Actions writes
+```powershell
+.\setup.ps1 -Image .\my-photo.png
+```
 
-Repository:
+`--reveal` scans the portrait into view row by row on load. `--animate` adds a repeating shimmer across the dot columns.
 
-**Settings → Actions → General → Workflow permissions**
+## Main files
 
-Choose:
+- `README.md` — profile layout.
+- `assets/portrait-dark.svg` / `portrait-light.svg` — animated dot-matrix portrait.
+- `assets/hero-terminal.svg` — animated terminal/HUD header.
+- `assets/activity-pipeline.svg` — animated request → API → data → automation pipeline.
+- `assets/stream-divider.svg` — moving data-stream dividers.
+- `.github/workflows/metrics.yml` — profile metrics.
+- `.github/workflows/snake.yml` — contribution snake.
+- `.github/workflows/radar.yml` — language radar and self-hosted cards.
+- `scripts/dotify.py` — portrait generator.
+- `scripts/radar.py` — radar generator.
+- `scripts/cards.py` — stat/project card generator.
 
-**Read and write permissions**
+## Notes
 
-Save.
-
-## 3. Run Live Pulse once
-
-**Actions → Update profile pulse → Run workflow**
-
-The workflow regenerates `assets/pulse.svg` from public GitHub data.
-It refreshes every 6 hours.
-
-## 4. Run contribution motion once
-
-**Actions → Generate contribution motion → Run workflow**
-
-This creates an `output` branch with the light/dark contribution animations referenced by the README.
-
-## 5. Company logo
-
-For now, the company stays discreet as text:
-
-`current · Grupo Flamboyan`
-
-When you have the official logo, add:
-
-`assets/flamboyan-logo.png`
-
-Do not recreate or approximate the corporate logo.
-
-## 6. Photo
-
-This version prioritizes the custom visual system.
-If you later want a premium portrait, add:
-
-`assets/avatar-premium.png`
-
-## 7. Confidentiality
-
-The case studies are intentionally generalized.
-Do not expose private repo links, credentials, internal endpoints, environment variables,
-database object names or sensitive architecture in the public profile.
-
-## Troubleshooting
-
-### Live Pulse gets 403 while pushing
-Check:
-
-**Settings → Actions → General → Workflow permissions → Read and write permissions**
-
-Then rerun.
-
-### Snake is broken
-Run the snake workflow manually once and verify that the `output` branch exists.
-
-### Animation looks static in a Markdown preview
-Some preview tools freeze SVG animation.
-Test on the actual GitHub profile page.
+The GitHub README does not execute JavaScript. All motion here is implemented with animated SVG/CSS or assets regenerated by GitHub Actions, which is why it works inside a profile README.

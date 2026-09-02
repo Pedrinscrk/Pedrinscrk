@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="150" viewBox="0 0 420 150" role="img" aria-label="APRD-SITEMASSA placeholder">
+<style>@keyframes p{0%,100%{opacity:.28}50%{opacity:1}}@keyframes s{from{transform:translateX(-80px)}to{transform:translateX(500px)}}.p{animation:p 2s ease-in-out infinite}.s{animation:s 4s linear infinite}</style>
+<rect x=".5" y=".5" width="419" height="149" rx="12" fill="#ffffff" stroke="#b9dfcf"/>
+<text x="22" y="38" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="15" font-weight="700" fill="#0e7a52">APRD-SITEMASSA</text>
+<text x="22" y="65" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" fill="#58766a">repository metadata sync pending</text>
+<path d="M22 104H398" stroke="#b9dfcf"/>
+<g class="s"><circle cx="0" cy="104" r="4" fill="#159866"/><rect x="-55" y="103" width="48" height="2" rx="1" fill="#0e7a52"/></g>
+<text class="p" x="22" y="130" font-family="ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" fill="#18352a">waiting for first GitHub Actions refresh…</text>
+</svg>

@@ -1,1 +1,37 @@
+name: Snake
 
+on:
+  schedule:
+    - cron: "0 */12 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "README.md"
+      - ".github/workflows/snake.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  snake:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate emerald snake animations
+        uses: Platane/snk@v3
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            assets/snake.svg?color_snake=#25c686&color_dots=#ebedf0,#b9f1d8,#6ee9b4,#25c686,#0e7a52
+            assets/snake-dark.svg?palette=github-dark&color_snake=#39e6a0&color_dots=#161b22,#0b3526,#0e5a3e,#159866,#25c686
+            assets/snake.gif?color_snake=#25c686&color_dots=#161b22,#0b3526,#0e5a3e,#159866,#25c686
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/snake.svg assets/snake-dark.svg assets/snake.gif
+          git diff --staged --quiet || git commit -m "chore: refresh contribution snake"
+          git push

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="430" viewBox="0 0 500 430" role="img" aria-label="language radar sync placeholder">
+<style>@keyframes p{0%,100%{opacity:.25}50%{opacity:.78}}@keyframes r{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}.p{animation:p 2.3s ease-in-out infinite}.r{animation:r 12s linear infinite;transform-origin:250px 220px}</style>
+<rect width="500" height="430" fill="none"/>
+<text x="250" y="28" text-anchor="middle" font-family="ui-sans-serif,Segoe UI,Arial" font-size="15" font-weight="700" fill="#d7f3e5">Pedrinscrk · language mix</text>
+<g transform="translate(250 220)" fill="none" stroke="#123629">
+<polygon points="0,-150 142,-46 88,121 -88,121 -142,-46"/><polygon points="0,-112 106,-35 66,91 -66,91 -106,-35"/><polygon points="0,-75 71,-23 44,61 -44,61 -71,-23"/><polygon points="0,-38 36,-12 22,31 -22,31 -36,-12"/>
+<path d="M0 0V-150M0 0L142-46M0 0L88 121M0 0L-88 121M0 0L-142-46"/>
+</g>
+<g class="r" fill="none" stroke="#25c686" stroke-width="2" opacity=".7"><path d="M250 220L250 92A128 128 0 0 1 372 181"/><circle cx="250" cy="92" r="4" fill="#39e6a0"/></g>
+<text class="p" x="250" y="397" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#25c686">SYNCING FROM PUBLIC REPOSITORIES</text>
+</svg>

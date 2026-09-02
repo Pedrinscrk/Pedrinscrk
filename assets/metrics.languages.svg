@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="470" height="175" viewBox="0 0 470 175" role="img" aria-label="LANGUAGE METRICS // SYNC PENDING placeholder">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#25c686" stop-opacity="0"/><stop offset=".5" stop-color="#39e6a0" stop-opacity=".8"/><stop offset="1" stop-color="#25c686" stop-opacity="0"/></linearGradient></defs>
+<style>@keyframes s{0%{transform:translateX(-220px)}100%{transform:translateX(690px)}}@keyframes p{0%,100%{opacity:.28}50%{opacity:1}}.s{animation:s 4.4s linear infinite}.p{animation:p 2.1s ease-in-out infinite}</style>
+<rect x="1" y="1" width="468" height="173" rx="14" fill="#07110d" stroke="#174b38"/>
+<g opacity=".24" stroke="#174b38"><path d="M30 18V157"/><path d="M70 18V157"/><path d="M110 18V157"/><path d="M150 18V157"/><path d="M190 18V157"/><path d="M230 18V157"/><path d="M270 18V157"/><path d="M310 18V157"/><path d="M350 18V157"/><path d="M390 18V157"/><path d="M430 18V157"/><path d="M18 30H452"/><path d="M18 64H452"/><path d="M18 98H452"/><path d="M18 132H452"/><path d="M18 166H452"/></g>
+<text x="50%" y="80" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="17" font-weight="700" fill="#25c686">LANGUAGE METRICS // SYNC PENDING</text>
+<text class="p" x="50%" y="108" text-anchor="middle" font-family="ui-monospace,Consolas,monospace" font-size="12" fill="#789889">FIRST GITHUB ACTION RUN WILL REPLACE THIS PLACEHOLDER</text>
+<rect class="s" x="0" y="0" width="160" height="175" fill="url(#g)" opacity=".13"/>
+</svg>

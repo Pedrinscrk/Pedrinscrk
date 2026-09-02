@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="34" viewBox="0 0 1000 34" role="img" aria-label="animated data stream divider">
+<style>
+@keyframes m1{from{transform:translateX(-330px)}to{transform:translateX(1030px)}}
+@keyframes m2{from{transform:translateX(-190px)}to{transform:translateX(1030px)}}
+@keyframes p{0%,100%{opacity:.18}50%{opacity:1}}
+.a{animation:m1 4.1s linear infinite}.b{animation:m2 6.4s linear infinite -1.8s}.p{animation:p 2.2s ease-in-out infinite}
+</style>
+<defs><filter id="g" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<path d="M0 17H1000" stroke="#25c686" stroke-opacity=".12"/>
+<g class="a"><rect x="0" y="16" width="260" height="2" rx="1" fill="#25c686"/><circle cx="273" cy="17" r="4" fill="#39e6a0" filter="url(#g)"/></g>
+<g class="b" opacity=".55"><rect x="0" y="16" width="130" height="2" rx="1" fill="#8ff0c8"/><circle cx="141" cy="17" r="2.5" fill="#8ff0c8"/></g>
+<circle class="p" cx="500" cy="17" r="3" fill="#25c686"/>
+</svg>
